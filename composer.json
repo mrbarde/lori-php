@@ -1,0 +1,13 @@
+{
+    "name": "lori-php",
+    "description": "Bootstrap a react project with php server side.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Barde",
+            "email": "mrbarde2k@gmail.com"
+        }
+    ],
+    "require": {}
+}
