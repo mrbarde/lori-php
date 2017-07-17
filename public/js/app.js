@@ -13700,12 +13700,12 @@ var Home = function (_Component) {
 						null,
 						_react2.default.createElement(
 							'a',
-							{ href: 'https://github.com/mrbarde/php-react-starter/wiki', target: '_blank', styleName: 'link' },
+							{ href: 'https://github.com/mrbarde/lori/wiki', target: '_blank', styleName: 'link' },
 							'Documentation'
 						),
 						_react2.default.createElement(
 							'a',
-							{ href: 'https://github.com/mrbarde/php-react-starter', target: '_blank', styleName: 'link' },
+							{ href: 'https://github.com/mrbarde/lori', target: '_blank', styleName: 'link' },
 							_react2.default.createElement('i', { className: 'fa fa-github', styleName: 'black_text' }),
 							' GitHub'
 						)
