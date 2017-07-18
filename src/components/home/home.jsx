@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import cssModules from 'react-css-modules';
 import styles from '../../styles/pages/home.scss';
 import env from 'env';
+import logo from '../../assets/logo_Logo1.png';
+import Particles from 'react-particles-js';
 
 /**
  * Home View
@@ -40,7 +42,16 @@ class Home extends Component{
 					author: 'Plato'
 				}
 			],
-			quote: null
+			quote: null,
+			particleStyles: {
+				position: 'absolute',
+				left: 0,
+				top: 0,
+				width: '100%',
+				height: '100%',
+				zIndex: 0,
+				opacity: 0.5
+			}
 		};
 	}
 
@@ -54,17 +65,16 @@ class Home extends Component{
 	}
 
 	render(){
-		var {quote} = this.state;
+		var {quote, particleStyles} = this.state;
 		// return view
 		return(
 			<div styleName='spanned'>
+				<Particles style={particleStyles} params={require('../../assets/particlesjs-config-1.json')}/>
 				<div styleName='column'>
 
 				</div>
 				<div styleName='column'>
-					<h1 styleName='welcome'>
-						{'Lori'}
-					</h1>
+					<img src={logo} styleName='logo'/>
 					<h5 styleName='message'>
 						{'Build something great...'}
 					</h5>

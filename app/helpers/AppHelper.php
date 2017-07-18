@@ -34,16 +34,6 @@ function url($append = FALSE){
 }
 
 /*
- * returns app environment
- * @return (string)
-*/
-function env()
-{
-	// returns environment name
-	return (strpos('localhost', $_SERVER["HTTP_HOST"]) >= 0) ? 'local' : 'production';
-}
-
-/*
  * aborts application
  * @param $code (integer)
  * @param $message (string)

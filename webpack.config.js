@@ -73,7 +73,7 @@ module.exports = function(env){
 				},
 				{ 
 					test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$/, 
-					loader: 'file?name=[path][name].[ext]?[hash]&context=./src' 
+					loader: 'file-loader?name=[path][name].[ext]?[hash]&context=src&outputPath=../' 
 				}
 			]
 		},

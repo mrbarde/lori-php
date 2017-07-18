@@ -1,22 +1,30 @@
 $message_color: #666;
+$primary: #374B71;
+$secondary: #D1E1FE;
 
-.welcome{
-	text-align: center;
-	color: #666;
-	margin-bottom: 0px;
-	margin-top: 0px !important;
-	font-weight: 100;
-	text-transform: capitalize;
-	font-size: 7em;
-	composes: spanned from '../utilities/settings.css';
-	composes: large_font from '../utilities/settings.css';
-	composes: lato from '../utilities/settings.css';
+.logo{
+	display: inline-block;
+	max-width: 360px;
+	height: auto;
 }
+
+// .welcome{
+// 	text-align: center;
+// 	color: #666;
+// 	margin-bottom: 0px;
+// 	margin-top: 0px !important;
+// 	font-weight: 100;
+// 	text-transform: capitalize;
+// 	font-size: 7em;
+// 	composes: spanned from '../utilities/settings.css';
+// 	composes: large_font from '../utilities/settings.css';
+// 	composes: lato from '../utilities/settings.css';
+// }
 
 .message{
 	margin: 0px 0px 15px 0px;
 	text-align: center;
-	color: $message_color;
+	color: $secondary;
 	font-weight: 300;
 	font-size: 1.3em;
 	composes: spanned from '../utilities/settings.css';
@@ -25,6 +33,7 @@ $message_color: #666;
 
 .spanned{
 	composes: spanned from '../utilities/settings.css';
+	composes: paged from '../utilities/settings.css';
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -35,6 +44,7 @@ $message_color: #666;
 
 .column{
 	flex: 1;
+	z-index: 1;
 }
 
 .main{
@@ -80,7 +90,7 @@ $message_color: #666;
 		margin-top: 0px;
 		margin-bottom: 0px;
 		text-align: center;
-		color: $message_color;
+		color: $secondary;
 		@media(max-width: '480px'){
 			font-size: 0.8em;
 		}
@@ -92,7 +102,7 @@ $message_color: #666;
 		text-align: center;
 		margin-top: 10px;
 		margin-bottom: 0px;
-		color: $message_color;
+		color: $secondary;
 		@media(max-width: '480px'){
 			font-size: 0.8em;
 		}
