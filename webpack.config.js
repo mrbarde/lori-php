@@ -1,58 +1,30 @@
 // import libraries
 var webpack = require('webpack');
-var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const {
+	BASE_DIR, 
+	APP_DIR, 
+	PUBLIC_DIR, 
+	CSS,
+	EXTRACTLESS,
+	EXTRACTSASS
+} = require('./configs');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const Connect = require('gulp-connect-php');
-
-/**
- * define paths
- */
-const base_path = path.resolve(__dirname, '/');
-const public_path = path.resolve(base_path, 'public/');
-
-// create new extract text object for css and less
-extractLESS = new ExtractTextPlugin({ 
-	filename: '/../css/app.css',
-	allChunks: true
-});
-// create new extract text object for css and sass
-extractSASS = new ExtractTextPlugin({ 
-	filename: '/../css/app.css',
-	allChunks: true
-});
-
-/**
- * starts php server on localhost:9000
- * and browser sync server on localhost:8080
- */
-var Serve = function(){
-	Connect.server({
-		base: './public',
-		port: 9000,
-		keepalive: true
-	});
-	return new BrowserSyncPlugin({
-		proxy: 'localhost:9000',
-		port: 8080,
-		files: ['public/**/*', 'public/index.php']
-	});
-}
+const Server = require('./server');
 
 // export module
 module.exports = function(env){
 	return {
-		entry: './src/main.jsx',
+		entry: APP_DIR+'/main.jsx',
 
 		output: {
-			path: path.join(__dirname, '/public/js'),
+			path: PUBLIC_DIR+'/js',
 			filename: 'app.js',
 		},
 		resolve:{
 			alias:{
-				AppConfigs:  path.join(__dirname, '/src/configs/app.config.js'),
-				CreateReducer:  path.join(__dirname, '/src/helpers/createReducer.helper.js'),
+				env: (env.production) ? APP_DIR+'/environments/production.environment.jsx' : APP_DIR+'/environments/local.environment.jsx', 
+				AppConfigs:  APP_DIR+'/configs/app.config.js',
+				CreateReducer:  APP_DIR+'/helpers/createReducer.helper.js',
 				Transitions: 'react-addons-css-transition-group'
 			}
 		},
@@ -61,14 +33,11 @@ module.exports = function(env){
 				{
 					test: /\.jsx?$/,
 					loader: 'babel-loader',
-					exclude: /node_modules|assets|libs/,
-					query: {
-						presets: ["es2015", "react"]
-					}
+					exclude: /node_modules|assets|libs/
 				},
 				{
 					test: /\.less$/,
-					use: extractLESS.extract({
+					use: EXTRACTLESS.extract({
 						fallback: 'style-loader',
 						use: [
 							{
@@ -86,7 +55,7 @@ module.exports = function(env){
 				},
 				{
 					test: /\.s?css$/,
-					use: extractSASS.extract({
+					use: EXTRACTSASS.extract({
 						fallback: 'style-loader',
 						use: [
 							{
@@ -109,15 +78,21 @@ module.exports = function(env){
 			]
 		},
 		plugins: [
-			extractLESS,
-			extractSASS,
+			EXTRACTLESS,
+			EXTRACTSASS,
 			new OptimizeCssAssetsPlugin({
 					assetNameRegExp: /\.css$/g,
 					cssProcessor: require('cssnano'),
 					cssProcessorOptions: { discardComments: {removeAll: true } },
 					canPrint: true
 			}),
-			new Serve()
+			new webpack.DefinePlugin({
+				'process.env': {
+					NODE_ENV: env.production ? JSON.stringify('production') : JSON.stringify('local')
+				}
+			}),
+			new webpack.optimize.UglifyJsPlugin(),
+			new Server()
 		]
 	};
 }

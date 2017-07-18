@@ -1,6 +1,6 @@
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import * as AuthReducers from '../data/auth/reducers';
+import * as AuthReducers from '../modules/auth/reducers';
 
 var createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
 

@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import cssModules from 'react-css-modules';
 import styles from '../../styles/pages/home.scss';
-import AppConfigs from 'AppConfigs';
+import env from 'env';
 
 /**
  * Home View
@@ -88,6 +88,6 @@ class Home extends Component{
 }
 
 // decorate component with styles
-const HOME = cssModules(Home, styles, AppConfigs.cssModulesOptions);
+const HOME = cssModules(Home, styles, env.cssModulesOptions);
 
 export default withRouter(connect()(HOME));

@@ -1,8 +1,8 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
+import cssModules from 'react-css-modules';
 import styles from '../../styles/other/notFound.css';
 import {Link, withRouter} from 'react-router-dom'
-import AppConfigs from 'AppConfigs';
+import env from 'env';
 
 class NotFound extends React.Component{
 
@@ -36,4 +36,4 @@ class NotFound extends React.Component{
 }
 
 // export component
-export default withRouter(CSSModules(NotFound, styles, AppConfigs.cssModulesOptions));
+export default withRouter(cssModules(NotFound, styles, env.cssModulesOptions));
