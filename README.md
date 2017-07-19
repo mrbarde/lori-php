@@ -2,7 +2,7 @@
 Quickly start a ReactJS project in less than 2 minutes.
 
 ### About Lori
-Lori is a Dolphin... Okay actually Lori is a compilation of many other packages and libraries put together with ReactJS for the sake of building scallable front-end applications, it allows you now worry about environment/development configuration.
+Lori is a Dolphin... Okay actually Lori is a compilation of many other packages and libraries put together with ReactJS for the sake of building scallable front-end applications, it allows you to not worry about environment/development configuration.
 
 ### Setup
 simply run the following command from your terminal/command-prompt `composer create-project thecodecafe/lori <project-name> 0.1-beta` this will download lori and install all dependencies.
