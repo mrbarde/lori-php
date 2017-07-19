@@ -1,6 +1,6 @@
 import React from 'react';
 import cssModules from 'react-css-modules';
-import styles from '../../styles/other/notFound.css';
+import styles from '../../styles/notFound.css';
 import {Link, withRouter} from 'react-router-dom'
 import env from 'env';
 

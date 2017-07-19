@@ -7,7 +7,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="<?php echo url('css/style.css') ?>">
 	<link type="text/css" rel="stylesheet" href="<?php echo url('css/app.css') ?>">
-
-	<!-- / bootstrap data -->
 </head>
 <body>
+    <div id="app">
+        <!-- app will load here  -->
+    </div>
+	<script type="text/javascript" src="<?php echo url('js/app.js') ?>"></script>
+</body>
+</html>

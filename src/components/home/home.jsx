@@ -2,10 +2,9 @@ import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import cssModules from 'react-css-modules';
-import styles from '../../styles/pages/home.scss';
+import styles from '../../styles/home.scss';
 import env from 'env';
 import logo from '../../assets/logo_Logo1.png';
-import Particles from 'react-particles-js';
 
 /**
  * Home View
@@ -42,16 +41,7 @@ class Home extends Component{
 					author: 'Plato'
 				}
 			],
-			quote: null,
-			particleStyles: {
-				position: 'absolute',
-				left: 0,
-				top: 0,
-				width: '100%',
-				height: '100%',
-				zIndex: 0,
-				opacity: 0.5
-			}
+			quote: null
 		};
 	}
 
@@ -69,7 +59,6 @@ class Home extends Component{
 		// return view
 		return(
 			<div styleName='spanned'>
-				<Particles style={particleStyles} params={require('../../assets/particlesjs-config-1.json')}/>
 				<div styleName='column'>
 
 				</div>

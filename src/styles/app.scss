@@ -1,0 +1,9 @@
+@import './utilities/colors.scss';
+.app-container{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: $primary;
+}

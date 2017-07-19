@@ -1,6 +1,4 @@
-$message_color: #666;
-$primary: #374B71;
-$secondary: #D1E1FE;
+@import './utilities/colors.scss';
 
 .logo{
 	display: inline-block;
@@ -16,9 +14,9 @@ $secondary: #D1E1FE;
 // 	font-weight: 100;
 // 	text-transform: capitalize;
 // 	font-size: 7em;
-// 	composes: spanned from '../utilities/settings.css';
-// 	composes: large_font from '../utilities/settings.css';
-// 	composes: lato from '../utilities/settings.css';
+// 	composes: spanned from './utilities/settings.css';
+// 	composes: large_font from './utilities/settings.css';
+// 	composes: lato from './utilities/settings.css';
 // }
 
 .message{
@@ -27,13 +25,12 @@ $secondary: #D1E1FE;
 	color: $secondary;
 	font-weight: 300;
 	font-size: 1.3em;
-	composes: spanned from '../utilities/settings.css';
-	composes: lato from '../utilities/settings.css';
+	composes: spanned from './utilities/settings.css';
+	composes: lato from './utilities/settings.css';
 }
 
 .spanned{
-	composes: spanned from '../utilities/settings.css';
-	composes: paged from '../utilities/settings.css';
+	composes: spanned from './utilities/settings.css';
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -58,8 +55,8 @@ $secondary: #D1E1FE;
 	text-decoration: none;
 	display: inline-block;
 	padding: 0px 15px;
-	composes: lato from '../utilities/settings.css';
-	composes: link_color from '../utilities/settings.css';
+	composes: lato from './utilities/settings.css';
+	composes: link_color from './utilities/settings.css';
 }
 
 .m-b-30{
@@ -71,8 +68,8 @@ $secondary: #D1E1FE;
 }
 
 .quote{
-	composes: box_sizing from '../utilities/settings.css';
-	composes: lato from '../utilities/settings.css';
+	composes: box_sizing from './utilities/settings.css';
+	composes: lato from './utilities/settings.css';
 	position: relative;
 	float: none;
 	clear: both;
