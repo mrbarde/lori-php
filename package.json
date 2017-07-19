@@ -1,5 +1,5 @@
 {
-  "name": "thecodecafe/lori",
+  "name": "lori",
   "description": "Quickly start a ReactJS project in a php run environment.",
   "main": "src/main.jsx",
   "scripts": {
