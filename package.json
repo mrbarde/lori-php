@@ -1,15 +1,14 @@
 {
-  "name": "lori-php",
-  "version": "1.0.0",
-  "description": "Quickly start a ReactJS project with php as your server-side language.",
-  "main": "src/app.js",
+  "name": "thecodecafe/lori",
+  "description": "Quickly start a ReactJS project in a php run environment.",
+  "main": "src/main.jsx",
   "scripts": {
     "test": "jest",
     "dev": "webpack --env.development -d -w",
     "prod": "webpack --env.production -p -w"
   },
   "author": "Daniel Barde - mrbarde2k@gmail.com",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.15.3",
     "react": "^15.6.1",

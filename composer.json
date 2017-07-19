@@ -1,6 +1,7 @@
 {
-    "name": "lori-php",
-    "description": "Bootstrap a react project with php server side.",
+    "name": "thecodecafe/lori",
+    "description": "Quickly start a ReactJS project in a php run environment.",
+    "keywords": ["framework", "reactjs", "lori", "thecodecafe"],
     "type": "project",
     "license": "MIT",
     "authors": [
