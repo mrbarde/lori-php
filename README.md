@@ -1,6 +1,4 @@
-<p align='center'>
-    # Lori
-</p>
+# Lori
 Quickly start a ReactJS project in less than 2 minutes.
 
 ### About Lori
