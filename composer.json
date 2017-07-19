@@ -10,5 +10,10 @@
             "email": "mrbarde2k@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "scripts": {
+        "post-create-project-cmd": [
+            "npm intall"
+        ]
+    }
 }
