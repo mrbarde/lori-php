@@ -5,7 +5,8 @@ Quickly start a ReactJS project in less than 2 minutes.
 Lori is a Dolphin... Okay actually Lori is a compilation of many other packages and libraries put together with ReactJS for the sake of building scallable front-end applications, it allows you now worry about environment/development configuration.
 
 ### Setup
-A simpler setup process is coming, but for now you can simply clone the replo locally, cd into it and from within the root directory of your new installation, run `npm install` after this simply run `npm run dev` to start the development server.
+simply run the following command from your terminal/command-prompt `composer create-project thecodecafe/lori <project-name> v0.1-beta` this will download lori and install all dependencies.
+Next cd into your new project and from within the root directory run `npm run dev` to start the development server.
 
 ### Compatibility
 Lori has been tested and found compatible with the following:
@@ -15,6 +16,7 @@ Lori has been tested and found compatible with the following:
 - Node (version 6)
 - Composer
 - Gulp PHP Connect (version 1.0.1)
+- Browser Sync (version 2.18.12)
 - Browser Sync Webpack Plugin (version 1.2.0)
 - Git (version 2)
 For a more comprehensive list please look through the package.json file.
