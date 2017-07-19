@@ -18,3 +18,7 @@ Lori has been tested and found compatible with the following:
 - Browser Sync Webpack Plugin (version 1.2.0)
 - Git (version 2)
 For a more comprehensive list please look through the package.json file.
+
+### License
+
+Lori is an open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
