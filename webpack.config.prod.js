@@ -10,7 +10,6 @@ const {
 	alias
 } = require('./lori.config');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const Server = require('./server');
 
 // export module
 module.exports = function(env){
@@ -69,20 +68,25 @@ module.exports = function(env){
 				},
 				{ 
 					test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$/, 
-					loader: 'file-loader?name=[sha512:hash:base64:7].[ext]&outputPath=../assets/' 
+					loader: 'file-loader?name=[path][name].[ext]?[hash]&context=src&outputPath=../' 
 				}
 			]
 		},
 		plugins: [
 			EXTRACTLESS,
 			EXTRACTSASS,
+			new OptimizeCssAssetsPlugin({
+					assetNameRegExp: /\.css$/g,
+					cssProcessor: require('cssnano'),
+					cssProcessorOptions: { discardComments: {removeAll: true } },
+					canPrint: true
+			}),
 			new webpack.DefinePlugin({
 				'process.env': {
-					NODE_ENV: JSON.stringify('development')
+					NODE_ENV: JSON.stringify('production')
 				}
 			}),
 			new webpack.optimize.UglifyJsPlugin(),
-			Server()
 		]
 	};
 }

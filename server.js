@@ -1,6 +1,6 @@
 const browserSync = require('browser-sync-webpack-plugin');
 const connect = require('gulp-connect-php');
-const {PUBLIC_DIR} = require('./configs');
+const {PUBLIC_DIR} = require('./lori.config');
 
 /**
  * starts php server on localhost:9000
@@ -16,9 +16,16 @@ module.exports = function(){
 	});
 
     // start browser sync server
-	return new browserSync({
-		proxy: 'localhost:9000',
-		port: 8080,
-		files: [PUBLIC_DIR+'/**/*', PUBLIC_DIR+'/index.php']
-	});
+	return new browserSync(
+		{
+			proxy: 'localhost:9000',
+			port: 8080,
+			files: [PUBLIC_DIR+'/**/*', PUBLIC_DIR+'/index.php']
+		},
+		{
+			// prevent BrowserSync from reloading the page
+			// and let Webpack Dev Server take care of this
+			reload: false
+		}
+	);
 }

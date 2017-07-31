@@ -1,7 +1,7 @@
 {
-    "name": "thecodecafe/lori",
+    "name": "mrbarde/lori",
     "description": "Quickly start a ReactJS project in a php run environment.",
-    "keywords": ["framework", "reactjs", "lori", "thecodecafe"],
+    "keywords": ["framework", "reactjs", "lori", "mrbarde"],
     "type": "project",
     "license": "MIT",
     "authors": [

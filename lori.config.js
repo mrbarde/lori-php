@@ -20,6 +20,14 @@ module.exports = {
     EXTRACTSASS: new ExtractTextPlugin({ 
         filename: '/../css/app.css',
         allChunks: true
-    })
+    }),
+
+    alias: ({env, APP_DIR}) => {
+        return {
+            env: (env.production) ? APP_DIR+'/environments/production.environment.jsx' : APP_DIR+'/environments/local.environment.jsx', 
+            AppConfigs:  APP_DIR+'/configs/app.config.js',
+            CreateReducer:  APP_DIR+'/helpers/createReducer.helper.js'
+        }
+    }
 
 };

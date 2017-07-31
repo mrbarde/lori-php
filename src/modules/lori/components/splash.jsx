@@ -2,9 +2,11 @@ import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import cssModules from 'react-css-modules';
-import styles from '../../styles/home.scss';
+import styles from '../styles/splash.scss';
 import env from 'env';
-import logo from '../../assets/logo_Logo1.png';
+import logo from '../files/logo_Logo1.png';
+import Quote from './presenters/quote.jsx';
+import Particles from 'react-particles-js';
 
 /**
  * Home View
@@ -41,6 +43,15 @@ class Home extends Component{
 					author: 'Plato'
 				}
 			],
+            particleStyles: {
+				position: 'absolute',
+				left: 0,
+				top: 0,
+				width: '100%',
+				height: '100%',
+				zIndex: 0,
+				opacity: 0.8
+			},
 			quote: null
 		};
 	}
@@ -59,6 +70,7 @@ class Home extends Component{
 		// return view
 		return(
 			<div styleName='spanned'>
+				<Particles style={particleStyles} params={require('../files/particlesjs-config.json')}/>
 				<div styleName='column'>
 
 				</div>
@@ -71,12 +83,7 @@ class Home extends Component{
 						<a href='https://github.com/mrbarde/lori/wiki' target='_blank' styleName='link'>Documentation</a>
 						<a href='https://github.com/mrbarde/lori' target='_blank' styleName='link'><i className='fa fa-github' styleName='black_text'></i>{' GitHub'}</a>
 					</div>
-					{ quote &&
-						<div styleName='quote'>
-							<p styleName='body'>{quote.body}</p>
-							<h5 styleName='author'>{'- '+quote.author}</h5>
-						</div>
-					}
+					{ quote && <Quote {...quote}/> }
 				</div>
 				<div styleName='column'>
 
@@ -86,7 +93,4 @@ class Home extends Component{
 	}
 }
 
-// decorate component with styles
-const HOME = cssModules(Home, styles, env.cssModulesOptions);
-
-export default withRouter(connect()(HOME));
+export default withRouter(connect()(cssModules(Home, styles, env.cssModulesOptions)));
