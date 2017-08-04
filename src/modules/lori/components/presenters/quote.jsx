@@ -12,4 +12,7 @@ var quote = ({body, author}) => {
     );
 };
 
+<style lang="sass">
+</style>
+
 export default cssModules(quote, styles, env.cssModulesOptions);

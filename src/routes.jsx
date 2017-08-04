@@ -5,8 +5,12 @@ import {
 } from 'react-router-dom';
 import Splash from './modules/lori/components/splash.jsx';
 
-export default (
-    <Switch>
-        <Route exact component={Splash}/>
-    </Switch>
-);
+const App = () => {
+    return(
+        <Switch>
+            <Route exact component={Splash}/>
+        </Switch>
+    );
+};
+
+export default App;

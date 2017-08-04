@@ -10,6 +10,9 @@ function config($key, $default = false){
 	// get config file name
 	$file = $segments[0];
 	// get config
+	if (!file_exists(config_path($file.".php"))) {
+		throw new Exception('Config file with name '.$file.' not found!');
+	}
 	$configs = require config_path($file.".php");
 	// if in local environment
 	if (env() == "local") {

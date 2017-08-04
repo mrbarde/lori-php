@@ -1,9 +1,14 @@
-@import '../../../styles/utilities/colors.scss';
+@import '../../../styles/utilities/variables.scss';
 
 .logo{
 	display: inline-block;
-	max-width: 360px;
-	height: auto;
+	width: 360px;
+	height: 360px;
+
+	@media(max-width: '600px'){
+		width: 250px;
+		height: 250px;
+	}
 }
 
 .message{

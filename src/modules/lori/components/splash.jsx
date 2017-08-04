@@ -50,7 +50,7 @@ class Home extends Component{
 				width: '100%',
 				height: '100%',
 				zIndex: 0,
-				opacity: 0.8
+				opacity: 0.4
 			},
 			quote: null
 		};
@@ -70,7 +70,7 @@ class Home extends Component{
 		// return view
 		return(
 			<div styleName='spanned'>
-				<Particles style={particleStyles} params={require('../files/particlesjs-config.json')}/>
+				<Particles style={particleStyles} className="foo" params={require('../files/particlesjs-config.json')}/>
 				<div styleName='column'>
 
 				</div>

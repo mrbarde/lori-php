@@ -4,8 +4,8 @@
   "main": "src/main.jsx",
   "scripts": {
     "test": "jest",
-    "dev": "webpack --env.development -d --config='webpack.config.js' -w",
-    "prod": "webpack --env.production -p  --config='webpack.config.prod.js'"
+    "dev": "cross-env NODE_ENV=development gulp start --silent",
+    "prod": "cross-env NODE_ENV=production gulp start --silent"
   },
   "author": "Daniel Barde - mrbarde2k@gmail.com",
   "license": "MIT",
@@ -20,6 +20,7 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "autoprefixer": "^7.1.2",
     "babel": "^6.23.0",
     "babel-core": "^6.25.0",
     "babel-jest": "^16.0.0",
@@ -30,15 +31,24 @@
     "browser-sync": "^2.18.13",
     "browser-sync-webpack-plugin": "^1.2.0",
     "classnames": "^2.2.5",
+    "cross-env": "^5.0.2",
     "css-loader": "^0.25.0",
     "enzyme": "^2.9.1",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
     "gulp-connect-php": "^1.0.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.1.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^16.0.2",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
+    "node-cmd": "^3.0.0",
     "node-sass": "^3.13.1",
     "optimize-css-assets-webpack-plugin": "^1.3.2",
     "postcss-loader": "^1.3.3",
@@ -50,7 +60,8 @@
     "resolve-url-loader": "^2.1.0",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.2",
-    "webpack": "^2.7.0"
+    "webpack": "^2.7.0",
+    "webpack-stream": "^3.2.0"
   },
   "jest": {
     "modulePaths": [
