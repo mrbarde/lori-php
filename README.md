@@ -5,7 +5,7 @@ Quickly start a ReactJS project in less than 2 minutes.
 Lori is a Dolphin... Okay actually Lori is a compilation of many other packages and libraries put together with ReactJS for the sake of building scallable front-end applications, it allows you to not worry about environment/development configuration.
 
 ### Setup
-simply run the following command from your terminal/command-prompt `composer create-project mrbarde/lori <project-name> beta.0.1` this will download lori and install all dependencies.
+simply run the following command from your terminal/command-prompt `composer create-project mrbarde/lori <project-name> 1.0.0` this will download lori and install all dependencies.
 Next cd into your new project and from within the root directory run `npm run dev` to start the development server.
 
 ### Compatibility
