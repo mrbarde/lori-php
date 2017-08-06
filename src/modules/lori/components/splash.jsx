@@ -7,6 +7,7 @@ import env from 'env';
 import logo from '../files/logo_Logo1.png';
 import Quote from './presenters/quote.jsx';
 import Particles from 'react-particles-js';
+import {Page} from 'lori-bites';
 
 /**
  * Home View
@@ -63,32 +64,36 @@ class Home extends Component{
 		let quote = this.state.quotes[index];
 		// set quote
 		this.setState({quote});
+
+		setTimeout(this.testNotification, 5000);
 	}
 
 	render(){
 		var {quote, particleStyles} = this.state;
 		// return view
 		return(
-			<div styleName='spanned'>
-				<Particles style={particleStyles} className="foo" params={require('../files/particlesjs-config.json')}/>
-				<div styleName='column'>
+			<Page title="Welcome to Lori Framework">
+				<div styleName='spanned'>
+					<Particles style={particleStyles} className="foo" params={require('../files/particlesjs-config.json')}/>
+					<div styleName='column'>
 
-				</div>
-				<div styleName='column'>
-					<img src={logo} styleName='logo'/>
-					<h5 styleName='message'>
-						{'Build something great...'}
-					</h5>
-					<div>
-						<a href='https://github.com/mrbarde/lori/wiki' target='_blank' styleName='link'>Documentation</a>
-						<a href='https://github.com/mrbarde/lori' target='_blank' styleName='link'><i className='fa fa-github' styleName='black_text'></i>{' GitHub'}</a>
 					</div>
-					{ quote && <Quote {...quote}/> }
-				</div>
-				<div styleName='column'>
+					<div styleName='column'>
+						<img src={logo} styleName='logo'/>
+						<h5 styleName='message'>
+							{'Build something great...'}
+						</h5>
+						<div>
+							<a href='https://github.com/mrbarde/lori/wiki' target='_blank' styleName='link'>Documentation</a>
+							<a href='https://github.com/mrbarde/lori' target='_blank' styleName='link'><i className='fa fa-github' styleName='black_text'></i>{' GitHub'}</a>
+						</div>
+						{ quote && <Quote {...quote}/> }
+					</div>
+					<div styleName='column'>
 
+					</div>
 				</div>
-			</div>
+			</Page>
 		);
 	}
 }

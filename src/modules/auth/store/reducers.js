@@ -1,6 +1,5 @@
 import * as types from './actionTypes';
-import CreateReducer from 'CreateReducer';
-
+import {CreateReducer} from 'lori-bites';
 /**
  * Auth Reducer
  * This holds the current auth state of the application

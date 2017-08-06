@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,400i,700,700i');
 @import './app.scss';
 @import './utilities/variables.scss';
+@import './utilities/animations.scss';
 
 html, body{
     position: relative;
@@ -9,6 +10,10 @@ html, body{
     height: 100%;
     margin: 0px 0px;
     overflow: hidden;
+}
+
+.lori_notifications{
+    z-index: 100;
 }
 
 #app{

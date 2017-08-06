@@ -38,7 +38,7 @@ module.exports.resolve.alias = {
 		? Clicks.DEV_DIR+ '/environments/production.environment.js' 
 		: Clicks.DEV_DIR+ '/environments/development.environment.js',
 	AppConfigs:  Clicks.DEV_DIR+'/configs/app.config.js',
-	CreateReducer:  Clicks.DEV_DIR+'/helpers/createReducer.helper.js'
+	RoutesConfig:  Clicks.DEV_DIR+'/configs/routes.config.js'
 };
 
 /**
