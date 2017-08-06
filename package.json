@@ -45,6 +45,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.1.1",
+    "gulp-uglify": "^3.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^16.0.2",
     "less": "^2.7.2",
