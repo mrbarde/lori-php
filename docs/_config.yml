@@ -1,1 +1,4 @@
 theme: jekyll-theme-cayman
+markdown: redcarpet
+url: https://mrbarde.github.io
+baseurl: /lori-framework
