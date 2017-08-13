@@ -1,9 +1,12 @@
 /vendor
 /node_modules
-/npm-debug.log
-/package-lock.json
 /.sass-cache
 /.phpintel
+/npm-debug.log
+/package-lock.json
+
+#### remove these lines
 /.git
-/public/js/app.js.map
-/public/js/app.js
+/public/js/*
+/public/css/*
+/public/images/*
