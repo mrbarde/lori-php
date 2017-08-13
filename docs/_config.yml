@@ -1,4 +1,0 @@
-url: https://mrbarde.github.io
-baseurl: /lori-framework
-name: Lori
-exclude: ['gulpfile.js', 'assets/sass', 'assets/js']

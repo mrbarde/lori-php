@@ -14871,8 +14871,6 @@ var Home = function (_Component) {
 			},
 			quote: null
 		};
-
-		_this.testNotification = _this.testNotification.bind(_this);
 		return _this;
 	}
 
@@ -14887,12 +14885,6 @@ var Home = function (_Component) {
 			this.setState({ quote: quote });
 
 			setTimeout(this.testNotification, 5000);
-		}
-	}, {
-		key: 'testNotification',
-		value: function testNotification() {
-			console.log('Testing notification');
-			this.props.dispatch((0, _loriBites.pushStart)({ message: 'Hello world!' }));
 		}
 	}, {
 		key: 'render',
