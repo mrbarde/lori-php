@@ -95,7 +95,7 @@ module.exports.module = {
 			loader: 'file-loader?name=images/[sha512:hash:base64:7].[ext]?[hash]&outputPath=../'
 		},
 		{ 
-			test: /\.(woff2?|ttf|eot|svg|otf)$/, 
+			test: /\.(woff2?|ttf|eot|otf)$/, 
 			loader: 'file-loader?name=fonts/[name].[ext]?[hash]&outputPath=../'
 		}
 	]
