@@ -125,7 +125,8 @@ if(Clicks.isProduction){
 			sourceMap: true,
 				compress: {
 					warnings: false
-				}
+				},
+			comments: false,
 		})
 	]);
 }

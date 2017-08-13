@@ -1,10 +1,6 @@
 import * as types from './actionTypes';
 import {CreateReducer} from 'lori-bites';
-/**
- * Auth Reducer
- * This holds the current auth state of the application
- * it is derived from the create reducer handelrs
- */
+
 export const auth = CreateReducer(
     {
         isFetching: false,
