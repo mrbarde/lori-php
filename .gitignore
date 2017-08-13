@@ -4,6 +4,5 @@
 /package-lock.json
 /.sass-cache
 /.phpintel
-/docs/_site
-/docs/.sass-cache
 /public/js/app.js.map
+/public/js/app.js
