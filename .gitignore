@@ -4,6 +4,8 @@
 /.phpintel
 /npm-debug.log
 /package-lock.json
+/__mocks__/*
+/__tests__/*
 
 #### remove these lines
 /.git

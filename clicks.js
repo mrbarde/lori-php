@@ -1,6 +1,5 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-const cmd = require('node-cmd');
 
 /**
  * Generates helpers and default configs for lori
@@ -44,12 +43,6 @@ class Clicks {
             filename: '../../src/styles/app.scss',
             allChunks: true
         });
-    }
-
-    /**
-     * starts php server on localhost:9000
-     */
-    startPhp(){
     }
 
 };
