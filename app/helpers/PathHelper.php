@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 	/*
 	* returns app path
 	* @Param $append (string)
