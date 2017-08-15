@@ -3,5 +3,5 @@
 /.sass-cache
 /.phpintel
 /npm-debug.log
-/__mocks__/*
-/__tests__/*
+/__mocks__
+/__tests__
