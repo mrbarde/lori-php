@@ -15,7 +15,8 @@ Clicks.init();
  */
 module.exports.output = {
 	path: Clicks.PUBLIC_DIR+'/js',
-	filename: 'app.js'
+	filename: 'app.js',
+	publicPath: 'public/'
 };
 
 /**

@@ -4,6 +4,7 @@
 /.phpintel
 /npm-debug.log
 /package-lock.json
+/yarn.json
 /__mocks__/*
 /__tests__/*
 
