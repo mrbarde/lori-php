@@ -53,7 +53,7 @@ module.exports.module = {
 		{
 			test: /\.jsx?$/,
 			loader: 'babel-loader',
-			exclude: /node_modules|assets|libs/
+			include: Clicks.DEV_DIR
 		},
 		{
 			test: /\.less$/,
@@ -71,7 +71,7 @@ module.exports.module = {
 					}
 				]
 			}),
-			exclude: /node_modules|assets|libs/
+			include: Clicks.DEV_DIR
 		},
 		{
 			test: /\.s?css$/,
@@ -89,15 +89,17 @@ module.exports.module = {
 					}
 				]
 			}),
-			exclude: /node_modules|assets|libs/
+			include: Clicks.DEV_DIR
 		},
 		{ 
 			test: /\.jpe?g$|\.gif$|\.png$|\.svg$/, 
-			loader: 'file-loader?name=images/[sha512:hash:base64:7].[ext]?[hash]&outputPath=../'
+			loader: 'file-loader?name=images/[sha512:hash:base64:7].[ext]?[hash]&outputPath=../',
+			include: Clicks.DEV_DIR
 		},
 		{ 
 			test: /\.(woff2?|ttf|eot|otf)$/, 
-			loader: 'file-loader?name=fonts/[name].[ext]?[hash]&outputPath=../'
+			loader: 'file-loader?name=fonts/[name].[ext]?[hash]&outputPath=../',
+			include: Clicks.DEV_DIR
 		}
 	]
 };
