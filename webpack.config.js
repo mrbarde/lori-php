@@ -1,12 +1,6 @@
 const webpack = require('webpack');
-const Clicks = require('./clicks');
+const loriConfig = require('./lori.config');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-
-/**
- * We will start by initializing clicks
- * this is where our config settings are
- */
-Clicks.init();
 
 /**
  * Now the output file and path
@@ -14,7 +8,7 @@ Clicks.init();
  * to at compilation time
  */
 module.exports.output = {
-	path: Clicks.PUBLIC_DIR+'/js',
+	path: loriConfig.publicDir+'/js',
 	filename: 'app.js',
 	publicPath: 'public/'
 };
@@ -35,11 +29,11 @@ module.exports.watch = true;
  * aliaes we want to resolve.
  */
 module.exports.resolve.alias = {
-	env: (Clicks.isProduction) 
-		? Clicks.DEV_DIR+ '/environments/production.environment.js' 
-		: Clicks.DEV_DIR+ '/environments/development.environment.js',
-	AppConfigs:  Clicks.DEV_DIR+'/configs/app.config.js',
-	RoutesConfig:  Clicks.DEV_DIR+'/configs/routes.config.js'
+	env: (loriConfig.isProduction) 
+		? loriConfig.devDir+ '/environments/production.environment.js' 
+		: loriConfig.devDir+ '/environments/development.environment.js',
+	AppConfigs:  loriConfig.devDir+'/configs/app.config.js',
+	RoutesConfig:  loriConfig.devDir+'/configs/routes.config.js'
 };
 
 /**
@@ -53,11 +47,11 @@ module.exports.module = {
 		{
 			test: /\.jsx?$/,
 			loader: 'babel-loader',
-			include: Clicks.DEV_DIR
+			include: loriConfig.devDir
 		},
 		{
 			test: /\.less$/,
-			use: Clicks.EXTRACTLESS.extract({
+			use: loriConfig.extractLess.extract({
 				fallback: 'style-loader',
 				use: [
 					{
@@ -71,11 +65,11 @@ module.exports.module = {
 					}
 				]
 			}),
-			include: Clicks.DEV_DIR
+			include: loriConfig.devDir
 		},
 		{
 			test: /\.s?css$/,
-			use: Clicks.EXTRACTSASS.extract({
+			use: loriConfig.extractScss.extract({
 				fallback: 'style-loader',
 				use: [
 					{
@@ -89,17 +83,17 @@ module.exports.module = {
 					}
 				]
 			}),
-			include: Clicks.DEV_DIR
+			include: loriConfig.devDir
 		},
 		{ 
 			test: /\.jpe?g$|\.gif$|\.png$|\.svg$/, 
 			loader: 'file-loader?name=images/[sha512:hash:base64:7].[ext]?[hash]&outputPath=../',
-			include: Clicks.DEV_DIR
+			include: loriConfig.devDir
 		},
 		{ 
 			test: /\.(woff2?|ttf|eot|otf)$/, 
 			loader: 'file-loader?name=fonts/[name].[ext]?[hash]&outputPath=../',
-			include: Clicks.DEV_DIR
+			include: loriConfig.devDir
 		}
 	]
 };
@@ -110,13 +104,13 @@ module.exports.module = {
  * more plugins as the environment may require
  */
 module.exports.plugins = [
-	Clicks.EXTRACTLESS,
-	Clicks.EXTRACTSASS,
+	loriConfig.extractLess,
+	loriConfig.extractScss,
 	new FriendlyErrorsWebpackPlugin()
 ];
 
 // if in production
-if(Clicks.isProduction){
+if(loriConfig.isProduction){
 	// concat extra plugins to webpack config
 	module.exports.plugins = (module.exports.plugins || []).concat([
 		new webpack.DefinePlugin({
@@ -125,22 +119,19 @@ if(Clicks.isProduction){
 			}
 		}),
 		new webpack.optimize.UglifyJsPlugin({
-			sourceMap: true,
-				compress: {
-					warnings: false
-				},
+			compressor: {
+				warnings: false
+			},
 			comments: false,
-		})
+		}),
+		new webpack.optimize.AggressiveMergingPlugin()
 	]);
 }
 
 /**
- * things to do in development environment
+ * set devtool
  */
-if(!Clicks.isProduction){
-	// use source-maps as devtool
-	module.exports.devtool = 'source-map';
-}
+module.exports.devtool = loriConfig.isProduction ? 'cheap-module-source-map' : 'source-map';
 
 /*
  *******************************
