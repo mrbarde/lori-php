@@ -14682,8 +14682,8 @@ var quote = function quote(_ref) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_splash_scss__ = __webpack_require__(183);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_splash_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__styles_splash_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_env__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__files_logo_png__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__files_logo_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__files_logo_png__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__assets_logo_png__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__assets_logo_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__assets_logo_png__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__presenters_quote_jsx__ = __webpack_require__(173);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_particles_js__ = __webpack_require__(420);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_particles_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_react_particles_js__);
@@ -14741,15 +14741,6 @@ var Home = function (_Component) {
 				body: 'Every heart sings a song, incomplete, until another heart whispers back. Those who wish to sing always find a song. At the touch of a lover, everyone becomes a poet.',
 				author: 'Plato'
 			}],
-			particleStyles: {
-				position: 'absolute',
-				left: 0,
-				top: 0,
-				width: '100%',
-				height: '100%',
-				zIndex: 0,
-				opacity: 0.4
-			},
 			quote: null
 		};
 		return _this;
@@ -14770,9 +14761,7 @@ var Home = function (_Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var _state = this.state,
-			    quote = _state.quote,
-			    particleStyles = _state.particleStyles;
+			var quote = this.state.quote;
 			// return view
 
 			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -14781,12 +14770,11 @@ var Home = function (_Component) {
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					'div',
 					{ styleName: 'spanned' },
-					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8_react_particles_js___default.a, { style: particleStyles, className: 'foo', params: __webpack_require__(471) }),
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { styleName: 'column' }),
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 						'div',
 						{ styleName: 'column' },
-						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_6__files_logo_png___default.a, styleName: 'logo' }),
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_6__assets_logo_png___default.a, styleName: 'logo' }),
 						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 							'h5',
 							{ styleName: 'message' },
@@ -37698,12 +37686,6 @@ var valueEqual = function valueEqual(a, b) {
 };
 
 exports.default = valueEqual;
-
-/***/ }),
-/* 471 */
-/***/ (function(module, exports) {
-
-module.exports = {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#d1e1fe"},"shape":{"type":"triangle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":11},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true}
 
 /***/ })
 /******/ ]);

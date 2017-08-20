@@ -29,7 +29,8 @@ gulp.task('webpack', function(){
     let task = new WebpackTask({
         source: path.resolve(__dirname, 'src/app.jsx'),
         config: require('./webpack.config.js'),
-        destination: path.join(__dirname, 'public/assets')
+        destination: path.join(__dirname, 'public/assets'),
+        callback: syncServer
     });
     task();
 });
@@ -47,16 +48,8 @@ gulp.task("sass", function(){
         destination: path.join(__dirname, 'public/assets/css')
     });
     task();
-});
-
-/**
- * ****************************************
- * Server Task
- * ****************************************
- */
-gulp.task('serve', function(){
+    // watch for changes in sass file
     watch();
-    phpServer();
 });
 
 /**
@@ -68,7 +61,7 @@ gulp.task('serve', function(){
  * http://localhost:PORT then proxy the server via
  * BrowserSync.
  */
-const phpServer = function(){
+gulp.task('phpServer', function(){
     // configure the server
     var phpserve = new PhpServer({
         base: path.join(__dirname, 'public'),
@@ -77,7 +70,7 @@ const phpServer = function(){
     }, syncServer);
     // start the server
     phpserve.start();
-};
+});
 
 /**
  * ****************************************
@@ -117,7 +110,7 @@ const watch = function(){
  * ****************************************
  * starts gulp task
  */
-gulp.task('start', ['sass', 'webpack', 'serve']);
+gulp.task('start', ['sass', 'phpServer', 'webpack']);
 
 /**
  * ****************************************
