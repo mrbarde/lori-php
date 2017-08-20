@@ -61,13 +61,13 @@ gulp.task("sass", function(){
  * http://localhost:PORT then proxy the server via
  * BrowserSync.
  */
-gulp.task('phpServer', function(){
+gulp.task('server', function(){
     // configure the server
     var phpserve = new PhpServer({
         base: path.join(__dirname, 'public'),
         port: loriConfig.serverPort,
         keepalive: true,
-    }, syncServer);
+    });
     // start the server
     phpserve.start();
 });
@@ -110,7 +110,7 @@ const watch = function(){
  * ****************************************
  * starts gulp task
  */
-gulp.task('start', ['sass', 'phpServer', 'webpack']);
+gulp.task('start', ['sass', 'server', 'webpack']);
 
 /**
  * ****************************************
